@@ -29,6 +29,19 @@ The project combines a responsive calculator frontend with a Spring Boot backend
 * Clear history option
 * Responsive interface
 
+### Topics 
+
+calculator
+full-stack
+java
+spring-boot
+mysql
+javascript
+html
+css
+rest-api
+web-development
+
 ### Backend
 
 * Spring Boot REST API
