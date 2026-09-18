@@ -31,16 +31,16 @@ The project combines a responsive calculator frontend with a Spring Boot backend
 
 ### Topics 
 
-calculator
-full-stack
-java
-spring-boot
-mysql
-javascript
-html
-css
-rest-api
-web-development
+* calculator
+* full-stack
+* java
+* spring-boot
+* mysql
+* javascript
+* html
+* css
+* rest-api
+* web-development
 
 ### Backend
 
