@@ -1,0 +1,905 @@
+/* ============================= */
+/*        MAIN WEBPAGE           */
+/* ============================= */
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #0f2027,
+        #203a43,
+        #2c5364
+    );
+
+    font-family: Arial, sans-serif;
+
+    perspective: 1000px;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+}
+
+
+/* ============================= */
+/*       ANIMATED TITLE          */
+/* ============================= */
+
+.title {
+
+    margin-top: 25px;
+
+    font-size: 42px;
+
+    letter-spacing: 5px;
+
+    color: white;
+
+    text-shadow:
+
+        0 0 10px #00eaff,
+
+        0 0 20px #00eaff,
+
+        0 0 40px #00eaff;
+
+    animation:
+        titleAnimation
+        2s ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes titleAnimation {
+
+    from {
+
+        transform: translateY(0px);
+
+        text-shadow:
+
+            0 0 10px #00eaff,
+
+            0 0 20px #00eaff;
+
+    }
+
+    to {
+
+        transform: translateY(-10px);
+
+        text-shadow:
+
+            0 0 20px #00eaff,
+
+            0 0 40px #00eaff,
+
+            0 0 60px #00eaff;
+
+    }
+
+}
+
+
+/* ============================= */
+/*        CONTROL BAR            */
+/* ============================= */
+
+.control-bar {
+
+    width: 370px;
+
+    height: 55px;
+
+    margin-top: 5px;
+
+    margin-bottom: 18px;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-radius: 18px;
+
+    background: rgba(
+        10,
+        20,
+        40,
+        0.75
+    );
+
+    border: 1px solid
+        rgba(
+            0,
+            234,
+            255,
+            0.25
+        );
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(0, 0, 0, 0.35),
+
+        inset 0 0 15px
+        rgba(0, 234, 255, 0.05);
+
+}
+
+
+/* ============================= */
+/*       CONTROL BUTTONS         */
+/* ============================= */
+
+.control-button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow: none;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.control-button:hover {
+
+    transform: scale(1.15);
+
+    box-shadow:
+
+        0 0 15px
+        rgba(0, 234, 255, 0.5);
+
+}
+
+
+.control-button:active {
+
+    transform: scale(0.95);
+
+}
+
+
+/* ============================= */
+/*      CENTER ANIMATION         */
+/* ============================= */
+
+.animation-area {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+}
+
+
+.animation-area span {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #00eaff;
+
+    box-shadow:
+
+        0 0 8px #00eaff;
+
+    animation:
+
+        floatingDots
+        1.4s
+        infinite
+        ease-in-out;
+
+}
+
+
+.animation-area span:nth-child(1) {
+
+    animation-delay: 0s;
+
+}
+
+
+.animation-area span:nth-child(2) {
+
+    animation-delay: 0.15s;
+
+}
+
+
+.animation-area span:nth-child(3) {
+
+    animation-delay: 0.30s;
+
+}
+
+
+.animation-area span:nth-child(4) {
+
+    animation-delay: 0.45s;
+
+}
+
+
+.animation-area span:nth-child(5) {
+
+    animation-delay: 0.60s;
+
+}
+
+
+@keyframes floatingDots {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+        opacity: 0.3;
+
+    }
+
+    50% {
+
+        transform: translateY(-8px);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ============================= */
+/*        CALCULATOR BOX         */
+/* ============================= */
+
+.calculator {
+
+    width: 320px;
+
+    padding: 25px;
+
+    margin-bottom: 40px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        145deg,
+        #1e1e1e,
+        #292929
+    );
+
+    box-shadow:
+
+        15px 15px 30px
+        rgba(0, 0, 0, 0.6),
+
+        -10px -10px 25px
+        rgba(255, 255, 255, 0.08),
+
+        inset 5px 5px 10px
+        rgba(255, 255, 255, 0.05),
+
+        inset -5px -5px 10px
+        rgba(0, 0, 0, 0.5);
+
+    transform: rotateX(5deg);
+
+    transition: 0.4s;
+
+}
+
+
+.calculator:hover {
+
+    transform:
+
+        rotateX(0deg)
+
+        translateY(-8px)
+
+        scale(1.02);
+
+    box-shadow:
+
+        20px 20px 40px
+        rgba(0, 0, 0, 0.7),
+
+        0 0 30px
+        rgba(0, 234, 255, 0.25);
+
+}
+
+
+/* ============================= */
+/*          DISPLAY              */
+/* ============================= */
+
+#display {
+
+    width: 100%;
+
+    height: 65px;
+
+    box-sizing: border-box;
+
+    margin-bottom: 18px;
+
+    padding: 12px;
+
+    font-size: 28px;
+
+    text-align: right;
+
+    color: #00eaff;
+
+    background: #111;
+
+    border: none;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    box-shadow:
+
+        inset 5px 5px 10px
+        rgba(0, 0, 0, 0.8),
+
+        inset -3px -3px 8px
+        rgba(255, 255, 255, 0.05),
+
+        0 0 10px
+        rgba(0, 234, 255, 0.15);
+
+}
+
+
+/* ============================= */
+/*       MAIN BUTTONS            */
+/* ============================= */
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+}
+
+
+/* ============================= */
+/*            BUTTONS             */
+/* ============================= */
+
+button {
+
+    height: 60px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background: linear-gradient(
+        145deg,
+        #333,
+        #1c1c1c
+    );
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        5px 5px 10px
+        rgba(0, 0, 0, 0.6),
+
+        -3px -3px 8px
+        rgba(255, 255, 255, 0.08);
+
+    transition: all 0.15s ease;
+
+}
+
+
+button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        7px 7px 15px
+        rgba(0, 0, 0, 0.7),
+
+        0 0 10px
+        rgba(0, 234, 255, 0.25);
+
+}
+
+
+button:active {
+
+    transform: translateY(3px);
+
+    box-shadow:
+
+        inset 4px 4px 8px
+        rgba(0, 0, 0, 0.7);
+
+}
+
+
+/* ============================= */
+/*          EQUAL BUTTON         */
+/* ============================= */
+
+.equal {
+
+    grid-column: span 2;
+
+    background: linear-gradient(
+        145deg,
+        #00bcd4,
+        #007c91
+    );
+
+    color: white;
+
+    box-shadow:
+
+        5px 5px 12px
+        rgba(0, 0, 0, 0.5),
+
+        0 0 15px
+        rgba(0, 234, 255, 0.25);
+
+}
+
+
+.equal:hover {
+
+    box-shadow:
+
+        7px 7px 18px
+        rgba(0, 0, 0, 0.6),
+
+        0 0 25px
+        rgba(0, 234, 255, 0.5);
+
+}
+
+
+/* ============================= */
+/*       SCIENTIFIC BUTTONS      */
+/* ============================= */
+
+.scientific-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+}
+
+
+.scientific-buttons button {
+
+    height: 45px;
+
+    font-size: 16px;
+
+    background: linear-gradient(
+        145deg,
+        #263238,
+        #151515
+    );
+
+}
+
+
+/* ============================= */
+/*        MEMORY BUTTONS         */
+/* ============================= */
+
+.memory-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 12px;
+
+}
+
+
+.memory-buttons button {
+
+    height: 45px;
+
+    font-size: 15px;
+
+    background: linear-gradient(
+        145deg,
+        #37474f,
+        #171717
+    );
+
+}
+
+
+/* ============================= */
+/*        MEMORY STATUS          */
+/* ============================= */
+
+#memoryStatus {
+
+    margin-top: 12px;
+
+    margin-bottom: 8px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #00eaff;
+
+    opacity: 0.8;
+
+}
+
+
+/* ============================= */
+/*          HISTORY              */
+/* ============================= */
+
+.history {
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top:
+
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+}
+
+
+.history h2 {
+
+    margin:
+        0 0 10px 0;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    color: #00eaff;
+
+    text-shadow:
+
+        0 0 8px #00eaff;
+
+}
+
+
+#historyList {
+
+    max-height: 120px;
+
+    overflow-y: auto;
+
+    font-size: 14px;
+
+    text-align: right;
+
+}
+
+
+#historyList div {
+
+    padding: 8px;
+
+    margin-bottom: 6px;
+
+    border-radius: 8px;
+
+    background:
+
+        rgba(255, 255, 255, 0.05);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+#historyList div:hover {
+
+    transform:
+        translateX(-5px);
+
+    background:
+
+        rgba(0, 234, 255, 0.12);
+
+    box-shadow:
+
+        0 0 10px
+        rgba(0, 234, 255, 0.25);
+
+}
+
+
+/* ============================= */
+/*       CLEAR HISTORY           */
+/* ============================= */
+
+.clear-history {
+
+    width: 100%;
+
+    height: 40px;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    background: linear-gradient(
+        145deg,
+        #8b0000,
+        #4b0000
+    );
+
+}
+
+
+.clear-history:hover {
+
+    box-shadow:
+
+        0 0 15px
+        rgba(255, 0, 0, 0.5);
+
+}
+
+
+/* ============================= */
+/*        LIGHT THEME            */
+/* ============================= */
+
+.light-theme {
+
+    background: linear-gradient(
+        135deg,
+        #e0f7fa,
+        #ffffff,
+        #cfd8dc
+    );
+
+}
+
+
+/* Calculator */
+
+.light-theme .calculator {
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #e0e0e0
+    );
+
+    box-shadow:
+
+        10px 10px 25px
+        rgba(0, 0, 0, 0.2),
+
+        -10px -10px 25px
+        rgba(255, 255, 255, 0.8);
+
+}
+
+
+/* Display */
+
+.light-theme #display {
+
+    background: #f5f5f5;
+
+    color: #007c91;
+
+}
+
+
+/* Buttons */
+
+.light-theme button {
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #dcdcdc
+    );
+
+    color: #222;
+
+}
+
+
+/* Control Bar */
+
+.light-theme .control-bar {
+
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    border:
+        1px solid
+        rgba(0, 124, 145, 0.25);
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(0, 0, 0, 0.15);
+
+}
+
+
+/* History */
+
+.light-theme .history {
+
+    color: #222;
+
+}
+
+
+/* History items */
+
+.light-theme #historyList div {
+
+    background:
+        rgba(0, 0, 0, 0.05);
+
+}
+
+
+/* ============================= */
+/*       RESPONSIVE DESIGN       */
+/* ============================= */
+
+@media (max-width: 500px) {
+
+    .title {
+
+        font-size: 28px;
+
+        letter-spacing: 3px;
+
+        margin-top: 20px;
+
+    }
+
+
+    .control-bar {
+
+        width: 320px;
+
+    }
+
+
+    .calculator {
+
+        width: 280px;
+
+        padding: 18px;
+
+    }
+
+
+    #display {
+
+        height: 55px;
+
+        font-size: 24px;
+
+    }
+
+
+    button {
+
+        height: 50px;
+
+        font-size: 18px;
+
+    }
+
+
+    .buttons {
+
+        gap: 8px;
+
+    }
+
+
+    .scientific-buttons {
+
+        gap: 8px;
+
+    }
+
+
+    .memory-buttons {
+
+        gap: 8px;
+
+    }
+
+}

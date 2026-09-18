@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>My Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ============================= -->
+    <!--          TITLE                -->
+    <!-- ============================= -->
+
+    <h1 class="title">
+        MY CALCULATOR
+    </h1>
+
+
+    <!-- ============================= -->
+    <!--        CONTROL BAR            -->
+    <!-- ============================= -->
+
+    <div class="control-bar">
+
+        <!-- SOUND -->
+
+        <button
+            onclick="toggleSound()"
+            class="control-button"
+            id="soundButton">
+
+            🔊
+
+        </button>
+
+
+        <!-- CENTER ANIMATION -->
+
+        <div class="animation-area">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- THEME -->
+
+        <button
+            onclick="toggleTheme()"
+            class="control-button"
+            id="themeButton">
+
+            🌙
+
+        </button>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!--       CALCULATOR BOX          -->
+    <!-- ============================= -->
+
+    <div class="calculator">
+
+
+        <!-- DISPLAY -->
+
+        <input
+            type="text"
+            id="display"
+            readonly>
+
+
+        <!-- ============================= -->
+        <!--       MAIN CALCULATOR         -->
+        <!-- ============================= -->
+
+        <div class="buttons">
+            <button onclick="allClear()">AC</button>
+
+            <button onclick="deleteLast()">⌫</button>
+
+            <button onclick="addValue('%')">%</button>
+
+            <button onclick="addValue('/')">÷</button>
+
+
+            <button onclick="addValue('7')">7</button>
+
+            <button onclick="addValue('8')">8</button>
+
+            <button onclick="addValue('9')">9</button>
+
+            <button onclick="addValue('*')">×</button>
+
+
+            <button onclick="addValue('4')">4</button>
+
+            <button onclick="addValue('5')">5</button>
+
+            <button onclick="addValue('6')">6</button>
+
+            <button onclick="addValue('-')">−</button>
+
+
+            <button onclick="addValue('1')">1</button>
+
+            <button onclick="addValue('2')">2</button>
+
+            <button onclick="addValue('3')">3</button>
+
+            <button onclick="addValue('+')">+</button>
+
+
+            <button onclick="addValue('0')">0</button>
+
+            <button onclick="addValue('.')">.</button>
+
+
+            <button
+                onclick="calculate()"
+                class="equal">
+
+                =
+
+            </button>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!--      SCIENTIFIC CALCULATOR     -->
+        <!-- ============================= -->
+
+        <div class="scientific-buttons">
+
+            <button
+                onclick="toggleAngleMode()"
+                id="angleMode">
+
+                DEG
+
+            </button>
+
+
+            <button onclick="squareRoot()">
+                √
+            </button>
+
+
+            <button onclick="square()">
+                x²
+            </button>
+
+
+            <button onclick="addValue(Math.PI)">
+                π
+            </button>
+
+
+            <button onclick="sinValue()">
+                sin
+            </button>
+
+
+            <button onclick="cosValue()">
+                cos
+            </button>
+
+
+            <button onclick="tanValue()">
+                tan
+            </button>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!--        MEMORY BUTTONS          -->
+        <!-- ============================= -->
+
+        <div class="memory-buttons">
+
+            <button onclick="memoryAdd()">
+                M+
+            </button>
+
+            <button onclick="memorySubtract()">
+                M-
+            </button>
+
+            <button onclick="memoryRecall()">
+                MR
+            </button>
+
+            <button onclick="memoryClear()">
+                MC
+            </button>
+
+        </div>
+
+
+        <!-- MEMORY STATUS -->
+
+        <div id="memoryStatus">
+            Memory: 0
+        </div>
+
+
+        <!-- ============================= -->
+        <!--           HISTORY              -->
+        <!-- ============================= -->
+
+        <div class="history">
+
+            <h2>
+                History
+            </h2>
+
+
+            <div id="historyList"></div>
+
+
+            <button
+                onclick="clearHistory()"
+                class="clear-history">
+
+                Clear History
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!--        JAVASCRIPT             -->
+    <!-- ============================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
