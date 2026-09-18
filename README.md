@@ -113,6 +113,19 @@ DELETE /api/calculations
 ```http
 DELETE /api/calculations/{id}
 ```
+## 📸 Screenshots
+
+### Light Mode
+
+![Calculator Light Mode](screenshots/calculator-light.png)
+
+### Dark Mode
+
+![Calculator Dark Mode](screenshots/calculator-dark.png)
+
+### Scientific Calculator & History
+
+![Calculator Scientific History](screenshots/calculator-scientific-history.png)
 
 ## ⚙️ Setup
 
